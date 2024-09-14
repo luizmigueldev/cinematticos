@@ -378,6 +378,7 @@ h6 {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
+    display: none;
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
