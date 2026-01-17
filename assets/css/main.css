@@ -854,6 +854,28 @@ section,
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
+  background-image: url('../img/banner-filmes-2025.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(69, 22, 97, 0.7); /* Roxo com 70% de transparência */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -871,7 +893,8 @@ section,
   font-weight: 600;
 }
 
-.hero .btn-get-started {
+.hero .btn-get-started,
+.hero .btn-getstarted {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-family: var(--heading-font);
@@ -884,7 +907,8 @@ section,
   transition: 0.5s;
 }
 
-.hero .btn-get-started:hover {
+.hero .btn-get-started:hover,
+.hero .btn-getstarted:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
@@ -956,7 +980,39 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
+/* Tablet adjustments */
+@media (max-width: 992px) and (min-width: 641px) {
+  .hero {
+    background-size: cover;
+    background-position: 50% 25%;
+    min-height: 70vh;
+  }
+
+  .hero .col-lg-6 {
+    text-align: center;
+  }
+
+  .hero .col-lg-6 h1,
+  .hero .col-lg-6 h2,
+  .hero .col-lg-6 h3 {
+    text-align: center;
+  }
+
+  .hero .d-flex {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Mobile adjustments */
 @media (max-width: 640px) {
+  .hero {
+    background-size: cover;
+    background-position: 50% 30%;
+    min-height: 60vh;
+    padding: 100px 0 40px 0;
+  }
+
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
@@ -969,8 +1025,24 @@ section,
   }
 
   .hero .btn-get-started,
+  .hero .btn-getstarted,
   .hero .btn-watch-video {
     font-size: 13px;
+  }
+
+  .hero .col-lg-6 {
+    text-align: center;
+  }
+
+  .hero .col-lg-6 h1,
+  .hero .col-lg-6 h2,
+  .hero .col-lg-6 h3 {
+    text-align: center;
+  }
+
+  .hero .d-flex {
+    justify-content: center;
+    width: 100%;
   }
 }
 
